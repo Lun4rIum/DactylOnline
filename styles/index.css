@@ -64,14 +64,54 @@ textarea:focus, input:focus{
 .WPM{
     font-size: 25px;
     margin:0;
+    -webkit-animation: fadeInFromNone 0.5s ease-out;
+    -moz-animation: fadeInFromNone 0.5s ease-out;
+    -o-animation: fadeInFromNone 0.5s ease-out;
+    animation: fadeInFromNone 0.5s ease-out;
 }
 
 .accuracy{
     font-size: 25px;
     margin:0;
+    -webkit-animation: fadeInFromNone 0.5s ease-out;
+    -moz-animation: fadeInFromNone 0.5s ease-out;
+    -o-animation: fadeInFromNone 0.5s ease-out;
+    animation: fadeInFromNone 0.5s ease-out;
 }
 
+.timer{
+    font-size: 25px;
+    margin:0;
+    -webkit-animation: fadeInFromNone 0.5s ease-out;
+    -moz-animation: fadeInFromNone 0.5s ease-out;
+    -o-animation: fadeInFromNone 0.5s ease-out;
+    animation: fadeInFromNone 0.5s ease-out;
+}
 
+.restart {
+    background-color: #FFF; /* Green */
+    border: transparent ;
+    color: #121212;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #111111;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    opacity: 70%;
+  }
+
+.restart:hover{
+    background-color: #cecece;
+    opacity: 1;
+
+}
 @-webkit-keyframes fadeInFromNone {
     0% {
         display: none;

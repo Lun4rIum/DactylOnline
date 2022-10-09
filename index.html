@@ -9,13 +9,17 @@
     <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono" rel="stylesheet">
     <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/timer.js"></script>
 </head>
 <body>
     
-
+    <p class="timer" id="timer"></p>
     <div class="wordlist-parent" id="wordlist-parent"></div>
     <input type="text" class="typing" id="typing" onkeypress="return event.charCode != 32"></input>
+    <button class="restart" id="restart">↺</button>
     <p class="WPM" id ="WPM">WPM: 0</p>
     <p class="accuracy" id ="accuracy">Accuracy: 0</p>
+    
+    
 </body>
 </html>

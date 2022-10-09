@@ -98,7 +98,10 @@ for (let j = 30; j < 300; j++) {
 
 
     
-// calcul finalement les wpm
+// restart le test 
 
+document.getElementById('restart').onclick = function(){
+    return location.reload();
+};
 
 
