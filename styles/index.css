@@ -17,6 +17,8 @@ body{
     outline: none;
     border-radius: 5px;
     border: transparent;
+    box-shadow: 5px 5px 5px #111111;
+    font-family: 'Roboto Mono';
 }
 
 
@@ -28,9 +30,10 @@ textarea:focus, input:focus{
 .wordlist-parent{
     padding-left: 50px;
     padding-right: 50px;
-    padding-bottom: 50px;
-    padding-top: 15px;
+    padding-bottom: 30px;
+    padding-top: 30px;
     text-align: center;
+    margin: 0;
 }
 
 
@@ -42,7 +45,7 @@ textarea:focus, input:focus{
     padding-bottom: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
     opacity: 30%;
     -webkit-animation: fadeInFromNone 0.5s ease-out;
@@ -58,8 +61,15 @@ textarea:focus, input:focus{
 }
 
 
+.WPM{
+    font-size: 25px;
+    margin:0;
+}
 
-
+.accuracy{
+    font-size: 25px;
+    margin:0;
+}
 
 
 @-webkit-keyframes fadeInFromNone {
