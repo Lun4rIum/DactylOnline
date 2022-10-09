@@ -5,7 +5,7 @@ const url = "https://raw.githubusercontent.com/Lun4rIum/OnlineTypingTest/main/li
 var xhr = new XMLHttpRequest();
 xhr.open('GET', url, false);
 xhr.send(null);
-var response = xhr.responseText;
+var response = xhr.responseText.replace(" ", "\n");
 var splitted = response.split("\n");
 
 var min = 0;
@@ -69,9 +69,12 @@ document.body.onkeyup = function(e) {
             var WPMunfloatFrappe = parseFloat((Frappe/5))
             var WPMunfloatTime = (60 - parseInt(Math.trunc(end) - Math.trunc(start)))/60
 
-            console.log(WPMunfloatFrappe, WPMunfloatTime)
             WPM = WPMunfloatFrappe / WPMunfloatTime
-            document.getElementById("WPM").innerHTML = Math.trunc(WPM)
+            document.getElementById("WPM").innerHTML = "WPM" + ": " + Math.trunc(WPM)
+
+            var Accuracy = ((Frappe - Error) / Frappe) * 100
+            document.getElementById("accuracy").innerHTML = "Accuracy" + ": " + Math.trunc(Accuracy)
+            console.log(Frappe, Error)
             start = new Date().getTime() / 1000
   
 
@@ -87,7 +90,7 @@ document.body.onkeyup = function(e) {
 
 console.log(Math.trunc(end) - Math.trunc(start))
 for (let j = 30; j < 300; j++) {
-    document.getElementsByClassName("words")[j].style = "visibility: hidden;"
+    document.getElementsByClassName("words")[j].style = "display: none;"
 }
 
 
