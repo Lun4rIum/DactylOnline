@@ -62,7 +62,7 @@ document.body.onkeyup = function(e) {
             Frappe = Frappe + wordlist[i].length;
             i=i+1;
 
-            document.getElementsByClassName("words")[74+i].style = "visibility: visible;"
+            document.getElementsByClassName("words")[29+i].style = "visibility: visible;"
 
             document.getElementById('typing').value = "";
 
@@ -87,7 +87,7 @@ document.body.onkeyup = function(e) {
 
 console.log(Math.trunc(end) - Math.trunc(start))
 for (let j = 30; j < 300; j++) {
-    document.getElementsByClassName("words")[j].style = "visibility: hidden; z-index: -1;"
+    document.getElementsByClassName("words")[j].style = "visibility: hidden;"
 }
 
 
