@@ -5,7 +5,7 @@ const url = "https://raw.githubusercontent.com/Lun4rIum/OnlineTypingTest/main/li
 var xhr = new XMLHttpRequest();
 xhr.open('GET', url, false);
 xhr.send(null);
-var response = xhr.responseText.replace(" ", "\n");
+var response = xhr.responseText.replace(/\s/g, "\n");
 var splitted = response.split("\n");
 
 var min = 0;
