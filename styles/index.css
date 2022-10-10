@@ -114,10 +114,10 @@ textarea:focus, input:focus{
 .restart:hover{
     opacity: 1;
     cursor: pointer;
-    -webkit-animation: fadeInFrom30 0.5s ease-out;
-    -moz-animation: fadeInFrom30 0.5s ease-out;
-    -o-animation: fadeInFrom30 0.5s ease-out;
-    animation: fadeInFrom30 0.5s ease-out;
+    -webkit-animation: fadeInFromNone 0.5s ease-out;
+    -moz-animation: fadeInFromNone 0.5s ease-out;
+    -o-animation: fadeInFromNone 0.5s ease-out;
+    animation: fadeInFromNone 0.5s ease-out;
 
 
 }
