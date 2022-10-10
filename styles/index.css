@@ -103,13 +103,21 @@ textarea:focus, input:focus{
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    opacity: 50%;
+    opacity: 30%;
+    -webkit-animation: fadeInFromNone 0.5s ease-out;
+    -moz-animation: fadeInFromNone 0.5s ease-out;
+    -o-animation: fadeInFromNone 0.5s ease-out;
+    animation: fadeInFromNone 0.5s ease-out;
     
   }
 
 .restart:hover{
     opacity: 1;
     cursor: pointer;
+    -webkit-animation: fadeInFrom30 0.5s ease-out;
+    -moz-animation: fadeInFrom30 0.5s ease-out;
+    -o-animation: fadeInFrom30 0.5s ease-out;
+    animation: fadeInFrom30 0.5s ease-out;
 
 
 }
