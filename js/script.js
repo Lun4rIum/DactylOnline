@@ -73,7 +73,7 @@ document.body.onkeyup = function(e) {
             document.getElementById("WPM").innerHTML = "WPM" + ": " + Math.trunc(WPM)
 
             var Accuracy = ((Frappe - Error) / Frappe) * 100
-            document.getElementById("accuracy").innerHTML = "Accuracy" + ": " + Math.trunc(Accuracy)
+            document.getElementById("accuracy").innerHTML = "Accuracy" + ": " + Math.trunc(Accuracy)+"%"
             console.log(Frappe, Error)
             start = new Date().getTime() / 1000
   
@@ -104,4 +104,14 @@ document.getElementById('restart').onclick = function(){
     return location.reload();
 };
 
-
+// afficher une popup si le bouton d'aide est cliqué
+var popup = "";
+document.getElementById('help').onclick = function(){
+    if (popup == ""){
+        popup = "open"
+        return document.getElementById("helpPopup").style = 'display: unset';
+    } else{
+        popup = ""
+        return document.getElementById("helpPopup").style = 'display: none;';
+    }
+};

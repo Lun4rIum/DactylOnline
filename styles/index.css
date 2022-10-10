@@ -2,6 +2,7 @@ body{
     background-color: #121212;
     color: #FFF;
     font-family: 'Roboto Mono';
+    
     }
 
 
@@ -58,6 +59,7 @@ textarea:focus, input:focus{
        -moz-user-select: none; 
         -ms-user-select: none; 
             user-select: none;
+
 }
 
 
@@ -104,23 +106,103 @@ textarea:focus, input:focus{
     margin-right: auto;
     margin-top: 20px;
     opacity: 30%;
-    -webkit-animation: fadeInFromNone 0.5s ease-out;
-    -moz-animation: fadeInFromNone 0.5s ease-out;
-    -o-animation: fadeInFromNone 0.5s ease-out;
-    animation: fadeInFromNone 0.5s ease-out;
+    -webkit-animation: fadeInFromNone 0.2s ease-out;
+    -moz-animation: fadeInFromNone 0.2s ease-out;
+    -o-animation: fadeInFromNone 0.2s ease-out;
+    animation: fadeInFromNone 0.2s ease-out;
     
   }
 
 .restart:hover{
     opacity: 1;
     cursor: pointer;
-    -webkit-animation: FadeFrom30 0.5s ease-out;
-    -moz-animation: FadeFrom30 0.5s ease-out;
-    -o-animation: FadeFrom30 0.5s ease-out;
-    animation: FadeFrom30 0.5s ease-out;
-
+    -webkit-animation: FadeFrom30 0.2s ease-out;
+    -moz-animation: FadeFrom30 0.2s ease-out;
+    -o-animation: FadeFrom30 0.2s ease-out;
+    animation: FadeFrom30 0.2s ease-out;
 
 }
+
+.restart:not(:hover){
+    -webkit-animation: FadeTo30 0.2s ease-out;
+    -moz-animation: FadeTo30 0.2s ease-out;
+    -o-animation: FadeTo30 0.2s ease-out;
+    animation: FadeTo30 0.2s ease-out;
+
+}
+
+.help {
+    background-color: #121212; /* Green */
+    border: transparent ;
+    color: #FFF;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    opacity: 30%;
+    -webkit-animation: fadeInFromNone 0.2s ease-out;
+    -moz-animation: fadeInFromNone 0.2s ease-out;
+    -o-animation: fadeInFromNone 0.2s ease-out;
+    animation: fadeInFromNone 0.2s ease-out;
+    
+  }
+
+.help:hover{
+    opacity: 1;
+    cursor: pointer;
+    -webkit-animation: FadeFrom30 0.2s ease-out;
+    -moz-animation: FadeFrom30 0.2s ease-out;
+    -o-animation: FadeFrom30 0.2s ease-out;
+    animation: FadeFrom30 0.2s ease-out;
+
+}
+
+.help:not(:hover){
+    -webkit-animation: FadeTo30 0.2s ease-out;
+    -moz-animation: FadeTo30 0.2s ease-out;
+    -o-animation: FadeTo30 0.2s ease-out;
+    animation: FadeTo30 0.2s ease-out;
+
+}
+
+#helpPopup{
+    width: 60vw;
+    height: 30vw;
+    background-color: black ;
+    margin-left: auto;
+    margin-right: auto;
+    position:fixed;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    border: 2px solid #ffffff;
+    border-radius:8px;
+    opacity: 90%;
+    display:none;
+    background: rgba(30, 30, 30, 0.5);
+    backdrop-filter: blur(6px);
+    padding: 10px;
+
+    -webkit-animation: FadeTo50 0.2s ease-out;
+    -moz-animation: FadeTo50 0.2s ease-out;
+    -o-animation: FadeTo50 0.2s ease-out;
+    animation: FadeTo50 0.2s ease-out;
+
+}
+
+
+kbd.key {
+    border-radius: 3px;
+    padding: 1px 2px 0;
+    border: 2px solid white;
+  }
+  
 @-webkit-keyframes fadeInFromNone {
     0% {
         display: none;
@@ -155,22 +237,7 @@ textarea:focus, input:focus{
     }
 }
 
-@-o-keyframes fadeInFromNone {
-    0% {
-        display: none;
-        opacity: 0;
-    }
 
-    1% {
-        display: block;
-        opacity: 0;
-    }
-
-    100% {
-        display: block;
-        opacity: 0.3;
-    }
-}
 
 @keyframes fadeInFromNone {
     0% {
@@ -210,4 +277,74 @@ textarea:focus, input:focus{
 @keyframes FromWhiteToRed {
     from { color: #FFF; }
 	to { color: red; }
+  }
+
+
+@keyframes FadeTo30 {
+    0% {
+        display: none;
+        opacity: 1;
+    }
+
+    1% {
+        display: block;
+        opacity: 1;
+    }
+
+    100% {
+        display: block;
+        opacity: 0.3;
+    }
+  }
+
+  @keyframes FadeTo100 {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+  }
+
+
+@keyframes FadeFrom100 {
+    0% {
+        display: unset;
+        opacity: 1;
+    }
+
+    1% {
+        display: unset;
+        opacity: 1;
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
+  }
+
+  @keyframes FadeTo50 {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 0.5;
+    }
   }

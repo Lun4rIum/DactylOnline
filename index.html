@@ -13,13 +13,21 @@
 </head>
 <body>
     
-    <p class="timer" id="timer"></p>
+    <p class="timer" id="timer">...</p>
     <div class="wordlist-parent" id="wordlist-parent"></div>
-    <input type="text" class="typing" id="typing" onkeypress="return event.charCode != 32"></input>
+    <input type="text" class="typing" id="typing" onkeypress="return event.charCode != 32" autofocus></input>
     <button class="restart" id="restart">↺</button>
     <p class="WPM" id ="WPM">WPM: 0</p>
-    <p class="accuracy" id ="accuracy">Accuracy: 0</p>
-    
+    <p class="accuracy" id ="accuracy">Accuracy: 0%</p>
+    <div class="helpPopup" id="helpPopup">
+        <h2>Page d'aide :</h1>
+        <p>Pour valider un mot, utiliser la touche <kbd class="key">espace</kbd> et non <kbd class="key">entrée</kbd></p>
+    </div>
     
 </body>
+
+<footer style="  position: absolute;bottom: 0;height: 2.5rem; width:99%; padding-bottom: 15px; margin-bottom: 15px;">
+    <hr>
+    <button class="help" id="help">?</button>
+</footer>
 </html>
