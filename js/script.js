@@ -1,6 +1,11 @@
-// Génerer des mots aléatoires
 
+
+import {end} from './timer.js';
+
+// Génerer des mots aléatoires
 const url = "https://raw.githubusercontent.com/Lun4rIum/OnlineTypingTest/main/liste.txt"
+
+
 
 var xhr = new XMLHttpRequest();
 xhr.open('GET', url, false);
@@ -15,21 +20,25 @@ max = Math.floor(max);
 
 
 const wordlist = [];
-for (let x = 0; x < 300; x++) {
-    var random = Math.floor(Math.random() * (max - min) + min);
-    wordlist.push(splitted[random].toLowerCase());
-
-    var tag = document.createElement("p"); // <p></p>
+export function generateWord(){
     
-    var text = document.createTextNode(wordlist[x]); 
-    tag.appendChild(text);
-    tag.classList.add('words');
-    tag.setAttribute('id','word'+x);
-    var element = document.getElementById("wordlist-parent");
-    element.appendChild(tag);
-  }
+    
+    for (let x = 0; x < 300; x++) {
+        var random = Math.floor(Math.random() * (max - min) + min);
+        wordlist.push(splitted[random].toLowerCase());
 
+        var tag = document.createElement("p"); // <p></p>
+        
+        var text = document.createTextNode(wordlist[x]); 
+        tag.appendChild(text);
+        tag.classList.add('words');
+        tag.setAttribute('id','word'+x);
+        var element = document.getElementById("wordlist-parent");
+        element.appendChild(tag);
+    }
+}
 
+generateWord()
 
 //document.getElementById('wordlist').innerText = wordlistStringSpace.toLowerCase()
 
@@ -44,7 +53,7 @@ var Error = 0;
 
 
 
-const end = (new Date().getTime() / 1000 )+ 60
+
 var start = new Date().getTime() / 1000
 
 var i=0
@@ -54,11 +63,9 @@ document.body.onkeyup = function(e) {
         e.keyCode == 32      
     ) {
         if (document.getElementById('typing').value == wordlist[i]) {
-            console.log("oui !");
+
             document.getElementsByClassName("words")[i].style = 'opacity: 100%; animation-name: FadeFrom30; animation-duration: 0.25s;';
             
-
-
             Frappe = Frappe + wordlist[i].length;
             i=i+1;
 
@@ -68,7 +75,7 @@ document.body.onkeyup = function(e) {
 
             var WPMunfloatFrappe = parseFloat((Frappe/5))
             var WPMunfloatTime = (60 - parseInt(Math.trunc(end) - Math.trunc(start)))/60
-
+            
             WPM = WPMunfloatFrappe / WPMunfloatTime
             document.getElementById("WPM").innerHTML = "WPM" + ": " + Math.trunc(WPM)
 
@@ -116,3 +123,4 @@ document.getElementById('help').onclick = function(){
         return document.getElementById("helpPopup").style = 'display: none;';
     }
 };
+

@@ -15,6 +15,20 @@
 <body>
     
     <p class="timer" id="timer">...</p>
+
+    <div class="chooseTime" id="chooseTime">
+        <a class="15" id="15">
+            15
+        </a>
+        <a class="30" id="30">
+            30
+        </a>
+        <a class="60" id="60">
+            60
+        </a>
+    </div>
+
+    </div>
     <div class="wordlist-parent" id="wordlist-parent"></div>
     <input type="text" class="typing" id="typing" onkeypress="return event.charCode != 32" autofocus></input>
     <button class="restart" id="restart">↺</button>
@@ -27,7 +41,7 @@
     
 </body>
 
-<footer style="  position: absolute;bottom: 0;height: 2.5rem; width:99%; padding-bottom: 15px; margin-bottom: 15px;">
+<footer style="  position: relative;bottom: 0;height: 2.5rem; width:99%; padding-bottom: 15px; margin-bottom: 15px;">
     <hr>
     <button class="help" id="help">?</button>
 </footer>
