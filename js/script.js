@@ -101,6 +101,7 @@ for (let j = 30; j < 300; j++) {
 // restart le test 
 
 document.getElementById('restart').onclick = function(){
+    document.getElementById('typing').value = "";
     return location.reload();
 };
 
