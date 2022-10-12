@@ -74,14 +74,14 @@ document.body.onkeyup = function(e) {
             document.getElementById('typing').value = "";
 
             var WPMunfloatFrappe = parseFloat((Frappe/5))
-            var WPMunfloatTime = (60 - parseInt(Math.trunc(end) - Math.trunc(start)))/60
+            var WPMunfloatTime = (document.cookie.split("=")[1] - parseInt(Math.trunc(end) - Math.trunc(start)))/60
             
             WPM = WPMunfloatFrappe / WPMunfloatTime
             document.getElementById("WPM").innerHTML = "WPM" + ": " + Math.trunc(WPM)
 
             var Accuracy = ((Frappe - Error) / Frappe) * 100
             document.getElementById("accuracy").innerHTML = "Accuracy" + ": " + Math.trunc(Accuracy)+"%"
-            console.log(Frappe, Error)
+
             start = new Date().getTime() / 1000
   
 
@@ -95,7 +95,7 @@ document.body.onkeyup = function(e) {
 
 
 
-console.log(Math.trunc(end) - Math.trunc(start))
+
 for (let j = 30; j < 300; j++) {
     document.getElementsByClassName("words")[j].style = "display: none;"
 }

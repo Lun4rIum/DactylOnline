@@ -44,7 +44,7 @@ function chrono() {
           
           end = parseInt((new Date().getTime() / 1000 )+ timer)
           location.reload()
-          document.getElementById("30").classList.toggle("selected");
+$
       };
 
       document.getElementById('60').onclick = function(){
@@ -74,13 +74,12 @@ var timing = setInterval(chrono, 1000);
 
 if (document.cookie.split("=")[1] == 60){
   document.getElementById("60").classList.toggle("selected");
-}
-
-if (document.cookie.split("=")[1] == 30){
+} else if (document.cookie.split("=")[1] == 30){
   document.getElementById("30").classList.toggle("selected");
-}
-
-if (document.cookie.split("=")[1] == 15){
+} else if (document.cookie.split("=")[1] == 15){
   document.getElementById("15").classList.toggle("selected");
+} else {
+  document.cookie = "timer=60; expires="+ now.toUTCString()+";";
+  location.reload()
 }
 

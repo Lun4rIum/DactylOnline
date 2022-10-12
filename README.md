@@ -27,7 +27,7 @@
 
 ## Utilisation
 
-Rendez vous sur le <a href="https://lun4rium.github.io/DactylOnline/" target="_blank">site</a> et laissez vous guider par le tutoriel.</h4>
+Rendez vous sur le <a href="https://lun4rium.github.io/OnlineTypingTest/" target="_blank">site</a> et laissez vous guider par le tutoriel.</h4>
 > **Note**
 > En cas de soucis, n'hésitez pas à me contacter.
 
