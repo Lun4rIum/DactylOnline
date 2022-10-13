@@ -80,7 +80,7 @@ document.body.onkeyup = function(e) {
             document.getElementById("WPM").innerHTML = "WPM" + ": " + Math.trunc(WPM)
 
             var Accuracy = ((Frappe - Error) / Frappe) * 100
-            document.getElementById("accuracy").innerHTML = "Accuracy" + ": " + Math.trunc(Accuracy)+"%"
+            document.getElementById("accuracy").innerHTML = "Précision" + ": " + Math.trunc(Accuracy)+"%"
 
             start = new Date().getTime() / 1000; 
             
