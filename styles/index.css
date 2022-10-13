@@ -3,6 +3,7 @@ body{
     color: #FFF;
     font-family: 'Roboto Mono';
     height: 100%;
+    scroll-behavior: smooth;
 
     }
 
@@ -29,6 +30,11 @@ hr{
     border: transparent;
     box-shadow: 5px 5px 5px #111111;
     font-family: 'Roboto Mono';
+    -webkit-animation: FadeTo100 0.5s ease-out;
+    -moz-animation: FadeTo100 0.5s ease-out;
+    -o-animation: FadeTo100 0.5s ease-out;
+    animation: FadeTo100 0.5s ease-out;
+    
 }
 
 
@@ -69,35 +75,37 @@ textarea:focus, input:focus{
         -ms-user-select: none; 
             user-select: none;
 
+            
+
 }
 
 
 .WPM{
     font-size: 25px;
     margin:0;
-    -webkit-animation: fadeInFromNone 0.5s ease-out;
-    -moz-animation: fadeInFromNone 0.5s ease-out;
-    -o-animation: fadeInFromNone 0.5s ease-out;
-    animation: fadeInFromNone 0.5s ease-out;
+    -webkit-animation: FadeTo100 0.5s ease-out;
+    -moz-animation: FadeTo100 0.5s ease-out;
+    -o-animation: FadeTo100 0.5s ease-out;
+    animation: FadeTo100 0.5s ease-out;
 }
 
 .accuracy{
     font-size: 25px;
     margin:0;
-    -webkit-animation: fadeInFromNone 0.5s ease-out;
-    -moz-animation: fadeInFromNone 0.5s ease-out;
-    -o-animation: fadeInFromNone 0.5s ease-out;
-    animation: fadeInFromNone 0.5s ease-out;
+    -webkit-animation: FadeTo100 1s ease-out;
+    -moz-animation: FadeTo100 1s ease-out;
+    -o-animation: FadeTo100 1s ease-out;
+    animation: FadeTo100 1s ease-out;
 }
 
 .timer{
     font-size: 25px;
     margin:0;
     display: inline-block;
-    -webkit-animation: fadeInFromNone 0.5s ease-out;
-    -moz-animation: fadeInFromNone 0.5s ease-out;
-    -o-animation: fadeInFromNone 0.5s ease-out;
-    animation: fadeInFromNone 0.5s ease-out;
+    -webkit-animation: FadeTo100 0.5s ease-out;
+    -moz-animation: FadeTo100 0.5s ease-out;
+    -o-animation: FadeTo100 0.5s ease-out;
+    animation: FadeTo100 0.5s ease-out;
 }
 
 .restart {
@@ -214,8 +222,7 @@ textarea:focus, input:focus{
     opacity:  0.3;
     display: inline-block;
     position: relative;
-    left: 95%;
-    transform: translateX(-95%);
+
 }
 
 .fa-cookie:hover{
@@ -228,6 +235,29 @@ textarea:focus, input:focus{
 }
 
 .fa-cookie:not(:hover){
+    -webkit-animation: FadeTo30 0.2s ease-out;
+    -moz-animation: FadeTo30 0.2s ease-out;
+    -o-animation: FadeTo30 0.2s ease-out;
+    animation: FadeTo30 0.2s ease-out;
+
+}
+
+.fa-gear{
+    opacity:  0.3;
+    display: inline-block;
+    position: relative;
+}
+
+.fa-gear:hover{
+    opacity:  1;
+    cursor: pointer;
+    -webkit-animation: FadeFrom30 0.2s ease-out;
+    -moz-animation: FadeFrom30 0.2s ease-out;
+    -o-animation: FadeFrom30 0.2s ease-out;
+    animation: FadeFrom30 0.2s ease-out;
+}
+
+.fa-gear:not(:hover){
     -webkit-animation: FadeTo30 0.2s ease-out;
     -moz-animation: FadeTo30 0.2s ease-out;
     -o-animation: FadeTo30 0.2s ease-out;
@@ -263,7 +293,37 @@ textarea:focus, input:focus{
 
 }
 
+#settingsWindow{
+    width: 60vw;
+    height: 30vw;
+    background-color: black ;
+    margin-left: auto;
+    margin-right: auto;
+    position:fixed;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    border: 2px solid #ffffff;
+    border-radius:8px;
+    opacity: 90%;
+    display:none;
+    background: rgba(30, 30, 30, 0.5);
+    backdrop-filter: blur(6px);
+    padding: 10px;
 
+    -webkit-animation: FadeTo90 0.2s ease-out;
+    -moz-animation: FadeTo90 0.2s ease-out;
+    -o-animation: FadeTo90 0.2s ease-out;
+    animation: FadeTo90 0.2s ease-out;
+
+}
+
+
+
+  
 kbd.key {
     border-radius: 3px;
     padding: 1px 2px 0;
@@ -284,6 +344,61 @@ kbd.key {
 }
 
 
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+
+}
+[type="checkbox"]:checked + label,
+[type="checkbox"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #FFF;
+}
+[type="checkbox"]:checked + label:before,
+[type="checkbox"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 5px;
+}
+[type="checkbox"]:checked + label:after,
+[type="checkbox"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #121212;
+    position: absolute;
+    border: transparent;
+    border-radius: 3px;
+    top: 5.15px;
+    left: 4px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+
+
 a{
     border: transparent ;
     color: #FFF;
@@ -302,6 +417,10 @@ a{
 a:hover{
     cursor: pointer;
     opacity:1;
+    -webkit-animation: FadeFrom30 0.2s ease-out;
+    -moz-animation: FadeFrom30 0.2s ease-out;
+    -o-animation: FadeFrom30 0.2s ease-out;
+    animation: FadeFrom30 0.2s ease-out;
 }
 
 a:not(:hover){
@@ -456,5 +575,27 @@ a:not(:hover){
     100% {
         display: block;
         opacity: 0.5;
+    }
+  }
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+
+@keyframes FadeTo90 {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 0.9;
     }
   }

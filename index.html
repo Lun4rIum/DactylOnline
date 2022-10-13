@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono" rel="stylesheet">
     <script type="module" src="js/script.js"></script>
     <script type="module" src="js/timer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
 </head>
 <body>
     
@@ -40,6 +41,12 @@
         <p>Pour valider un mot, utiliser la touche <kbd class="key">espace</kbd> et non <kbd class="key">entrée</kbd></p>
     </div>
 
+    <div class="settingsWindow" id="settingsWindow">
+        <h2>Listes des options</h2>
+        <input type="checkbox" id="autoDeleteWhenError" name="autoDeleteWhenError">
+        <label for="autoDeleteWhenError">Supprimer tout le mot lorsqu'il est faux</label>
+    </div>
+
     
 </body>
 
@@ -48,5 +55,6 @@
     <button class="help" id="help">?</button>
     <i class="fa-brands fa-github" id="github-footer"></i>
     <i class="fa-solid fa-cookie"></i>
+    <i class="fa-solid fa-gear" id="settings"></i>
 </footer>
 </html>

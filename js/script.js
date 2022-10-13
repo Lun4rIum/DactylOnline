@@ -74,7 +74,7 @@ document.body.onkeyup = function(e) {
             document.getElementById('typing').value = "";
 
             var WPMunfloatFrappe = parseFloat((Frappe/5))
-            var WPMunfloatTime = (document.cookie.split("=")[1] - parseInt(Math.trunc(end) - Math.trunc(start)))/60
+            var WPMunfloatTime = (Cookies.get('timer') - parseInt(Math.trunc(end) - Math.trunc(start)))/60
             
             WPM = WPMunfloatFrappe / WPMunfloatTime
             document.getElementById("WPM").innerHTML = "WPM" + ": " + Math.trunc(WPM)
@@ -85,10 +85,13 @@ document.body.onkeyup = function(e) {
             start = new Date().getTime() / 1000
   
 
-    } else {
+    } else if (Cookies.get('autoDeleteWhenError') != 'True'){
         document.getElementsByClassName("words")[i].style = 'color: red; animation-duration: 0.25s; animation-name: FromWhiteToRed;';
         Error++
-    }
+    }else if (Cookies.get('autoDeleteWhenError') == 'True') {
+        document.getElementsByClassName("words")[i].style = 'color: red; animation-duration: 0.25s; animation-name: FromWhiteToRed;';
+        document.getElementById('typing').value = "";
+        Error++
 
   }
 }
@@ -128,3 +131,29 @@ document.getElementById('help').onclick = function(){
 document.getElementById('github-footer').onclick = function(){
     window.open('https://github.com/Lun4rIum/DactylOnline', '_newtab');
 }
+
+
+var settings = ""
+document.getElementById('settings').onclick = function(){
+    if (settings == ""){
+        settings = "open"
+        return document.getElementById("settingsWindow").style = 'display: unset';
+    } else{
+        settings = ""
+        return document.getElementById("settingsWindow").style = 'display: none;';
+    }
+}
+
+
+var expiryDate = new Date();
+expiryDate.setMonth(expiryDate.getMonth() + 1);
+
+const checkbox = document.getElementById('autoDeleteWhenError')
+checkbox.addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+        Cookies.set('autoDeleteWhenError', 'True', { expires: 30 })
+    } else {
+        Cookies.set('autoDeleteWhenError', 'False', { expires: 30 })
+    }
+  })
+};
