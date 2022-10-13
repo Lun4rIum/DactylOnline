@@ -161,3 +161,10 @@ checkbox.addEventListener('change', (event) => {
     }
   })
 
+
+  
+  document.getElementById('cookiesInfo').onclick = function(){
+    window.open('https://www.cookieyes.com/knowledge-base/cookies-101/what-are-essential-cookies/', '_newtab');
+    
+  }
+

@@ -42,9 +42,13 @@
     </div>
 
     <div class="settingsWindow" id="settingsWindow">
-        <h2>Listes des options</h2>
+        <h2>Listes des options :</h2>
+        <h3>Options du système :</h3>
         <input type="checkbox" id="autoDeleteWhenError" name="autoDeleteWhenError">
         <label for="autoDeleteWhenError">Supprimer tout le mot lorsqu'il est faux</label>
+        <h3>Options d'apparence :</h3>
+        <input type="checkbox" id="Mode" name="Mode">
+        <label for="Mode">Mode blanc</label>
     </div>
 
     
@@ -52,9 +56,10 @@
 
 <footer>
     <hr>
-    <button class="help" id="help">?</button>
-    <i class="fa-brands fa-github" id="github-footer"></i>
-    <i class="fa-solid fa-cookie"></i>
+
+    <i class="fa-sharp fa-solid fa-circle-question" id="help"></i>
     <i class="fa-solid fa-gear" id="settings"></i>
+    <i class="fa-solid fa-cookie" id="cookiesInfo"></i>
+    <i class="fa-brands fa-github" id="github-footer"></i>
 </footer>
 </html>
