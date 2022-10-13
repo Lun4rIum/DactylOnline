@@ -2,10 +2,19 @@ body{
     background-color: #121212;
     color: #FFF;
     font-family: 'Roboto Mono';
-    
+    height: 100%;
+
     }
 
+footer {
+    position:relative;
+    bottom:0;
+    float: bottom;
+}
 
+hr{
+    margin-top: 17%;
+}
 
 .typing{
     text-align: center;
@@ -143,7 +152,7 @@ textarea:focus, input:focus{
     border: transparent ;
     color: #FFF;
     text-decoration: none;
-    display: block;
+    display: inline-block;
     font-size: 20px;
     width: 20px;
     height: 20px;
@@ -172,6 +181,53 @@ textarea:focus, input:focus{
 }
 
 .help:not(:hover){
+    -webkit-animation: FadeTo30 0.2s ease-out;
+    -moz-animation: FadeTo30 0.2s ease-out;
+    -o-animation: FadeTo30 0.2s ease-out;
+    animation: FadeTo30 0.2s ease-out;
+
+}
+
+.fa-github{
+    opacity:  0.3;
+    display: inline-block
+}
+
+.fa-github:hover{
+    opacity:  1;
+    cursor: pointer;
+    -webkit-animation: FadeFrom30 0.2s ease-out;
+    -moz-animation: FadeFrom30 0.2s ease-out;
+    -o-animation: FadeFrom30 0.2s ease-out;
+    animation: FadeFrom30 0.2s ease-out;
+}
+
+.fa-github:not(:hover){
+    -webkit-animation: FadeTo30 0.2s ease-out;
+    -moz-animation: FadeTo30 0.2s ease-out;
+    -o-animation: FadeTo30 0.2s ease-out;
+    animation: FadeTo30 0.2s ease-out;
+
+}
+
+.fa-cookie{
+    opacity:  0.3;
+    display: inline-block;
+    position: relative;
+    left: 95%;
+    transform: translateX(-95%);
+}
+
+.fa-cookie:hover{
+    opacity:  1;
+    cursor: pointer;
+    -webkit-animation: FadeFrom30 0.2s ease-out;
+    -moz-animation: FadeFrom30 0.2s ease-out;
+    -o-animation: FadeFrom30 0.2s ease-out;
+    animation: FadeFrom30 0.2s ease-out;
+}
+
+.fa-cookie:not(:hover){
     -webkit-animation: FadeTo30 0.2s ease-out;
     -moz-animation: FadeTo30 0.2s ease-out;
     -o-animation: FadeTo30 0.2s ease-out;
@@ -224,7 +280,9 @@ kbd.key {
     padding-top: 3px;
     padding-bottom: 3px;
     float: right;
+ 
 }
+
 
 a{
     border: transparent ;

@@ -124,3 +124,7 @@ document.getElementById('help').onclick = function(){
     }
 };
 
+
+document.getElementById('github-footer').onclick = function(){
+    window.open('https://github.com/Lun4rIum/DactylOnline', '_newtab');
+}
