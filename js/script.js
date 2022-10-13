@@ -82,18 +82,23 @@ document.body.onkeyup = function(e) {
             var Accuracy = ((Frappe - Error) / Frappe) * 100
             document.getElementById("accuracy").innerHTML = "Accuracy" + ": " + Math.trunc(Accuracy)+"%"
 
-            start = new Date().getTime() / 1000;
-  
-
-    } else {
-        if (Cookies.get('autoDeleteWhenError') == 'True') {
-            document.getElementsByClassName("words")[i].style = 'color: red; animation-duration: 0.25s; animation-name: FromWhiteToRed;';
-            document.getElementById('typing').value = "";
-            Error++
+            start = new Date().getTime() / 1000; 
+            
+            document.getElementById('typing').style = "animation: none "; 
+            
         } else {
-        document.getElementsByClassName("words")[i].style = 'color: red; animation-duration: 0.25s; animation-name: FromWhiteToRed;';
-        Error++
-        };   
+            document.getElementById('typing').style = "animation: shake 0.3s; ";
+            
+            
+            if (Cookies.get('autoDeleteWhenError') == 'True') {
+                document.getElementById('typing').value = "";
+            }   
+            document.getElementsByClassName("words")[i].style = 'color: red; animation-duration: 0.25s; animation-name: FromWhiteToRed;';
+           
+            Error++
+            
+
+            
     };
 
   }
