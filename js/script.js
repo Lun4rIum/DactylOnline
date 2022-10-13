@@ -82,16 +82,19 @@ document.body.onkeyup = function(e) {
             var Accuracy = ((Frappe - Error) / Frappe) * 100
             document.getElementById("accuracy").innerHTML = "Accuracy" + ": " + Math.trunc(Accuracy)+"%"
 
-            start = new Date().getTime() / 1000
+            start = new Date().getTime() / 1000;
   
 
-    } else if (Cookies.get('autoDeleteWhenError') != 'True'){
+    } else {
+        if (Cookies.get('autoDeleteWhenError') == 'True') {
+            document.getElementsByClassName("words")[i].style = 'color: red; animation-duration: 0.25s; animation-name: FromWhiteToRed;';
+            document.getElementById('typing').value = "";
+            Error++
+        } else {
         document.getElementsByClassName("words")[i].style = 'color: red; animation-duration: 0.25s; animation-name: FromWhiteToRed;';
         Error++
-    }else if (Cookies.get('autoDeleteWhenError') == 'True') {
-        document.getElementsByClassName("words")[i].style = 'color: red; animation-duration: 0.25s; animation-name: FromWhiteToRed;';
-        document.getElementById('typing').value = "";
-        Error++
+        };   
+    };
 
   }
 }
@@ -112,6 +115,7 @@ for (let j = 30; j < 300; j++) {
 
 document.getElementById('restart').onclick = function(){
     document.getElementById('typing').value = "";
+    console.log("test")
     return location.reload();
 };
 
@@ -156,4 +160,4 @@ checkbox.addEventListener('change', (event) => {
         Cookies.set('autoDeleteWhenError', 'False', { expires: 30 })
     }
   })
-};
+
