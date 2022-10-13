@@ -308,7 +308,10 @@ textarea:focus, input:focus{
 }
 
 
-
+.copyright{
+    opacity: 0.3;
+    text-align: center;
+}
   
 kbd.key {
     border-radius: 3px;
