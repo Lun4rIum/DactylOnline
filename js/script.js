@@ -80,7 +80,12 @@ document.body.onkeyup = function(e) {
             document.getElementById("WPM").innerHTML = "WPM" + ": " + Math.trunc(WPM)
 
             var Accuracy = ((Frappe - Error) / Frappe) * 100
-            document.getElementById("accuracy").innerHTML = "Précision" + ": " + Math.trunc(Accuracy)+"%"
+            if (Accuracy < 0) {
+                document.getElementById("accuracy").innerHTML = "Précision" + ": " +0+"%"
+            } else {
+                document.getElementById("accuracy").innerHTML = "Précision" + ": " + Math.trunc(Accuracy)+"%"
+            }
+            
 
             start = new Date().getTime() / 1000; 
             
@@ -91,7 +96,9 @@ document.body.onkeyup = function(e) {
             
             
             if (Cookies.get('autoDeleteWhenError') == 'True') {
+                document.getElementById("myCheck").checked = true;
                 document.getElementById('typing').value = "";
+
             }   
             document.getElementsByClassName("words")[i].style = 'color: red; animation-duration: 0.25s; animation-name: FromWhiteToRed;';
            
@@ -166,10 +173,33 @@ checkbox.addEventListener('change', (event) => {
     }
   })
 
+const colorTheme = document.getElementById('Mode')
+colorTheme.addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+        Cookies.set('Mode', 'Light', { expires: 30 })
+    } else {
+        Cookies.set('Mode', 'Dark', { expires: 30 })
+    }
+  })
 
   
   document.getElementById('cookiesInfo').onclick = function(){
     window.open('https://www.cookieyes.com/knowledge-base/cookies-101/what-are-essential-cookies/', '_newtab');
     
   }
+
+if (Cookies.get('autoDeleteWhenError') == 'True') {
+    document.getElementById("autoDeleteWhenError").checked = true;
+}
+
+
+
+
+if (Cookies.get('Mode') == 'Light') {
+    document.getElementById("Mode").checked = true;
+    document.body.classList.toggle('light-theme');  
+   
+}
+
+
 
